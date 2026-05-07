@@ -13,6 +13,15 @@
 ## Try It Now!
 **🔗 [LitLLM Web App](https://litllm.onrender.com)**
 
+**🤖 LitLLM in Claude Code** — install in one line:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/LitLLM/LitLLM/main/skill/install.sh | bash
+```
+
+Then in any Claude Code session, just say *"Find related work for paper.pdf"*.
+Full docs in [`skill/SKILL.md`](skill/SKILL.md).
+
 ## LitLLM Demo
 
 <p align="center">

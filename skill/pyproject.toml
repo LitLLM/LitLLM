@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "litllm-skill"
+version = "0.1.0"
+description = "Literature search and related-work generation for academic papers, packaged as a Claude Code skill. Installs the `litllm` CLI."
+readme = "SKILL.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Gaurav Sahu", email = "gaurav.sahu@mila.quebec" }]
+keywords = ["literature-review", "related-work", "academic", "claude-code", "skill"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = [
+  "openai>=1.0",
+  "pdfminer.six>=20231228",
+  "tqdm>=4.0",
+  "numpy>=1.24",
+  "python-dotenv>=1.0",
+  "PyYAML>=6.0",
+  "requests>=2.31",
+  "arxiv>=2.1",
+  "semanticscholar>=0.8",
+]
+
+[project.optional-dependencies]
+embeddings = ["sentence-transformers>=2.7", "torch>=2.0"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+litllm = "litllm.cli:main"
+
+[project.urls]
+Homepage = "https://litllm.github.io"
+Repository = "https://github.com/LitLLM/LitLLM"
+Issues = "https://github.com/LitLLM/LitLLM/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["litllm"]
